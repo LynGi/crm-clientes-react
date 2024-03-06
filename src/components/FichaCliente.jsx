@@ -8,6 +8,16 @@ const FichaCliente = ({ cliente, setCliente, eliminarCliente }) => {
       const respuesta = confirm('¿Deseas eliminar este registro?');
 
       if (respuesta) {
+        confirm('Registro eliminado ⛔')
+        eliminarCliente(id)
+      }
+  }
+
+    const handleCompletar = () => {
+      const respuesta = confirm('¿Has atentido este solicitud?');
+
+      if (respuesta) {
+        confirm('Tarea completada ✅ ¡Felicitaciones! 🥳')
         eliminarCliente(id)
       }
   }
@@ -39,6 +49,7 @@ const FichaCliente = ({ cliente, setCliente, eliminarCliente }) => {
               <button 
                 type="button"
                 className="py-2 px-8 bg-green-600 hover:bg-green-700 text-white font-bold uppercaser rounded-md"
+                onClick={ handleCompletar }
               >Completar</button>
               
               <button 
